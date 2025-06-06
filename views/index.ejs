@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+
+    <h1>Blogs:</h1>
+    <ol>
+    <% if (locals.titleView && locals.contentView){ %>
+        <% for (let i = 0; i < titleView.length; i++){ %>
+            <div class = "blogs">
+            <li>
+                <div class = "blogDropDown" id = "<%= i %>"><%= titleView[i] %>
+                    <div class = "changes">
+                        <a href = " edit/<%= i %>">📝</a>
+                        <form action = "/delete/<%= i %>" method = "POST">
+                            <button type = "submit" class = "delete">❌</button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+            </div>
+            <div class = "content" id = "content<%= i %>"><%= contentView[i] %></div>
+        <% } %>
+    <% } %>
+    </ol>
+
+<%- include("partials/footer.ejs") %>

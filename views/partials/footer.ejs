@@ -1,0 +1,19 @@
+    </main>
+
+    <footer>
+        Copyright © <%=new Date().getFullYear()%> Bloggr. All rights reserved.
+    </footer>
+
+    <script>
+        document.querySelectorAll(".blogDropDown").forEach(dropdown => {
+            dropdown.addEventListener("click", () => {
+            const index = dropdown.getAttribute("id");
+            const contentDiv = document.getElementById("content"+index);
+            if (contentDiv.style.display === "none" || contentDiv.style.display === "") contentDiv.style.display = "block";
+            else contentDiv.style.display = "none";
+            });
+        });
+    </script>
+</body>
+
+</html>
